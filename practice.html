@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body{
+			background-image: url('images.jfif');
+		}
+		.boxi
+		{
+			height: 300px;
+			top:25%;
+			left:25%;
+			right:25%;
+			position: relative;
+			border:3px solid green; 
+		}
+		.items
+		{
+			margin=0;
+			position: absolute;
+			top:50%;
+			left:10%;
+			-ms-transform:translate(-50%,-50%);
+			transform:translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="boxi">
+		<div class="items">
+		<H2>Book a call</H2>
+		<p>For Further One To One session </p>
+		<form >
+			<label for="name">First Name:</label><br>
+			<input type="text" id="name" name="name"><br>
+			<label for="email">Email:</label><br>
+			<input type="text" id="email" name="email"><br>
+			<label for="phone_number">Phone Number</label><br>
+			<input type="number"id="phone_number" name="phone_number"><br>
+			<label for="date">Time For Call</label><br>
+			<input type="date"id="date" name="date">
+			<input type="Time"id="time" name="date"><br>
+			<button class="submit" id="button-ins">GET A CALL</button>
+
+		</form></div> 
+	</div>
+
+</body>
+<script type="text/javascript">
+	const inpname=document.getElementById("name");
+	const inpemail=document.getElementById("email");
+	const inp_phone=document.getElementById("phone_number");
+	const inpdate=document.getElementById("date");
+	const inptime=document.getElementById("time");
+	const inpbttn=document.getElementById("button-ins");
+
+	inpbttn.onclick=function()
+	{
+		const iname=inpname.value;
+		const iemail=inpemail.value;
+		const iphone=inp_phone.value;
+		const iinpdate=inptime.value;
+		if(iname&&iemail&&iphone&&iinpdate)
+		{
+			localStorage.setItem("name",iname);
+			localStorage.setItem("email",iemail);
+			localStorage.setItem("phone",iphone);
+			localStorage.setItem("date",iinpdate);
+			location.reload();
+		}
+	}
+</script>
+</html>
